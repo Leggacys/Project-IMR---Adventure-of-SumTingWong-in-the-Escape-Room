@@ -6,7 +6,67 @@ ModelImporter:
   - first:
       74: -623603649343465320
     second: Scene
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BoxBase
+    second: {fileID: 2100000, guid: 9ceb5bb2c307c984b8413897f44eb9ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CouchBase
+    second: {fileID: 2100000, guid: 48828d0cc28847346957906bbb76da93, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CouchMain
+    second: {fileID: 2100000, guid: 810e989a53ac9a040b3df86902900a40, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Damage
+    second: {fileID: 2100000, guid: 9123e50c3d36ff64baf18e3c256a1034, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: e0a181f10d1ce1b4d9b6ad90ded318e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass.001
+    second: {fileID: 2100000, guid: 31567f45cc28fad4385a58cccbcfeeb9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: KeyBase
+    second: {fileID: 2100000, guid: 9d24bb7e3ed35204381e701bff42e966, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LEgs
+    second: {fileID: 2100000, guid: 0027fb76d81545e47a18dbafa1ad6413, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_polypropylene
+    second: {fileID: 2100000, guid: 1710108761dc60d45baf33d01bb6e102, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 35fd3dd3ae099744c94853ce2761d8cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TableBase
+    second: {fileID: 2100000, guid: 7643aa1066a787843a91a74f6fa265c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TableLegs
+    second: {fileID: 2100000, guid: 4bda7e1ab23218741983ee0f9d0b32e8, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
