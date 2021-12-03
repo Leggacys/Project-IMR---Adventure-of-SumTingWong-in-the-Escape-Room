@@ -6,8 +6,10 @@ using System;
 
 public class LockBehaviour : MonoBehaviour
 {
-    public Text digit;
-
+    public Text digit1;
+    public Text digit2;
+    public Text digit3;
+    public int index;
     // Start is called before the first frame update
     void Start(){
     
@@ -15,36 +17,67 @@ public class LockBehaviour : MonoBehaviour
 
     // Update is called once per frame
     void Update(){
-        if (Input.GetKeyDown(KeyCode.Space)){
-            IncreaseDigit();
-        }
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+
+    }
+
+    //Test buttons functionality
+    [ContextMenu("TestButton")]
+
+    public void TestButton()
+    {
+        DecreaseDigit(index);
+    }
+
+    public void IncreaseDigit(int index)
+    {
+        switch (index)
         {
-            DecreaseDigit();
+            case 1:
+                IncreaseDigit(digit1);
+                break;
+            case 2:
+                IncreaseDigit(digit2);
+                break;
+            case 3:
+                IncreaseDigit(digit3);
+                break;
+        }
+            
+    }
+
+    public void DecreaseDigit(int index)
+    {
+        switch (index)
+        {
+            case 1:
+                DecreaseDigit(digit1);
+                break;
+            case 2:
+                DecreaseDigit(digit2);
+                break;
+            case 3:
+                DecreaseDigit(digit3);
+                break;
         }
 
     }
 
-    public void IncreaseDigit(){
-        int value = Int32.Parse(digit.text);
+    private void IncreaseDigit(Text button){
+        int value = Int32.Parse(button.text);
         if (value < 9)
             value += 1;
         else if (value == 9)
             value = 0;
-        digit.text = value.ToString();
+        button.text = value.ToString();
     }
 
-    public void DecreaseDigit(){
-        int value = Int32.Parse(digit.text);
+    private void DecreaseDigit(Text button){
+        int value = Int32.Parse(button.text);
         if (value > 0)
-        {
             value -= 1;
-        }
-        else
-        {
+        else if (value == 0)
             value = 9;
-        }
-        digit.text = value.ToString();
+        button.text = value.ToString();
     }
 
 }
