@@ -15,8 +15,10 @@ public class Room3Manager : MonoBehaviour
     // };
 
     // State currentState= State.STATE_ENTERED;
+    public float penaltyValue;
     public float secondCount;
     public GameObject UIText;
+    public GameObject endText;
     public List<GameObject> puzzlePieces;
     public GameObject puzzleToSpawn,ball;
 
@@ -24,23 +26,23 @@ public class Room3Manager : MonoBehaviour
     Text UIValue;
 
     private void OnEnable() {
-         //UIValue = UIText.GetComponent<Text>();
-        //StartCoroutine("UITimer");
+         UIValue = UIText.GetComponent<Text>();
+        StartCoroutine("UITimer");
         StartCoroutine("PuzzleSpawn");
        
     }
 
-    // IEnumerator UITimer(){
+    IEnumerator UITimer(){
 
-    //     while(secondCount>0){
-    //         UIValue.text = "" + secondCount;
-    //         secondCount -=1;
-    //         yield return new WaitForSeconds(1);
-    //     }
+        while(secondCount>0){
+            UIValue.text = "" + secondCount;
+            secondCount -=1;
+            yield return new WaitForSeconds(1);
+        }
+        endText.SetActive(true);
 
 
-
-    // }
+    }
 
     IEnumerator PuzzleSpawn(){
         while(true){
@@ -61,6 +63,10 @@ public class Room3Manager : MonoBehaviour
 
 
 
+    }
+
+    public void GhostCollided(){
+        secondCount -= penaltyValue;
     }
 
 

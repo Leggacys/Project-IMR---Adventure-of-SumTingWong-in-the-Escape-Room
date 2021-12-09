@@ -8,11 +8,13 @@ public class LightFlicker : MonoBehaviour
     Light currentLight;
     public List<GameObject> syncWith;
     List<Light> lightSync = null;
+    public float lightFlickerMin;
+    public float lightFlickerMax;
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         currentLight = GetComponent<Light>();
-
+        currentLight.intensity = 2;
         if(syncWith.Count>0){
         
         lightSync = new List<Light>();
@@ -35,16 +37,16 @@ public class LightFlicker : MonoBehaviour
         
         for(int i = 0; i < counts; i++) {
 
-            while (currentLight.intensity>0.001){
-                float step = Random.Range(0.005f,0.1f);
-                currentLight.intensity-=step;
+           
+                
+                currentLight.intensity = 0;
                 if(lightSync!= null){
                         foreach(Light obj in lightSync) {
                             obj.intensity = currentLight.intensity;
                         }
                 }
-            yield return new WaitForSeconds(Random.Range(0.0005f,0.05f));
-            }
+            yield return new WaitForSeconds(Random.Range(0.05f,0.1f));
+            
 
         currentLight.intensity = initial;
             if(lightSync!= null){
@@ -54,7 +56,7 @@ public class LightFlicker : MonoBehaviour
             }
         }
         
-        yield return new WaitForSeconds(Random.Range(5,10));
+        yield return new WaitForSeconds(Random.Range(lightFlickerMin,lightFlickerMax));
         }
 
 
