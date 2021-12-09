@@ -12,14 +12,12 @@ public class TapToPlace : MonoBehaviour
     private GameObject spawnedObject;
     private ARRaycastManager _arRaycastManager;
     private Vector2 touchPosition;
-    private ARPlaneManager _planeManager;
 
     private static List<ARRaycastHit> hits = new List<ARRaycastHit>();
 
 
     private void Start()
     {
-        _planeManager = GetComponent<ARPlaneManager>();
         _arRaycastManager = GetComponent<ARRaycastManager>();
     }
 
@@ -37,11 +35,6 @@ public class TapToPlace : MonoBehaviour
 
     private void Update()
     {
-        foreach (var plane in _planeManager.trackables)
-        {
-            plane.gameObject.SetActive(false);
-        }
-        
         if (!TryGetTouchPosition(out Vector2 touchPosition))
             return;
         if (_arRaycastManager.Raycast(touchPosition, hits, TrackableType.PlaneWithinPolygon))
