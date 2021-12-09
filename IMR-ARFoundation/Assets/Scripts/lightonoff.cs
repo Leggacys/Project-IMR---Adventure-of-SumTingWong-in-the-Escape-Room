@@ -16,6 +16,8 @@ public class lightonoff : MonoBehaviour
 
     public GameObject key;
 
+    public bool isLightTriggered;
+
     private void Start()
     {
 
@@ -23,17 +25,20 @@ public class lightonoff : MonoBehaviour
         //txtToDisplay.SetActive(false);
         StartCoroutine("CheckNumberOfLights");
     }
+    
 
-    private void Update()
+
+    public void Interact()
     {
-        if (PlayerInZone && Input.GetKeyDown(KeyCode.F))           //if in zone and press F key
+        if (PlayerInZone)
         {
+            isLightTriggered = true;
             StartCoroutine("SwitchLight");
             gameObject.GetComponent<AudioSource>().Play();
             gameObject.GetComponent<Animator>().Play("switch");
+            Debug.Log("Andrei Boss");
+
         }
-        
-        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -80,6 +85,7 @@ public class lightonoff : MonoBehaviour
                 i--;
             }
         }
+        isLightTriggered = false;
     }
 
     IEnumerator CheckNumberOfLights()
