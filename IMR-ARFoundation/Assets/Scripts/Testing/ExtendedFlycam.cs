@@ -69,9 +69,5 @@ public class ExtendedFlycam : MonoBehaviour
 		{
 			Screen.lockCursor = (Screen.lockCursor == false) ? true : false;
 		}
-
-		
-
-		
 	}
 }
