@@ -22,6 +22,7 @@ public class Room3Manager : MonoBehaviour
     public GameObject endText;
     public List<GameObject> puzzlePieces;
     public GameObject puzzleToSpawn,ball,roomPrefab;
+    public GameObject endObject;
     Vector3 BallTransform = new Vector3(0.69f,0.69f,0.69f);
 
 
@@ -89,15 +90,11 @@ public class Room3Manager : MonoBehaviour
         secondCount -= penaltyValue;
     }
 
-    public GameObject endObject;
+    
 
-    private void OnTriggerEnter(Collider other) {
-        if(other.gameObject.tag == "Ball")
-            endObject.SetActive(true);
-            endGame(1);
-    }
+    
 
-    void endGame(int final){
+    public void endGame(int final){
         roomPrefab.SetActive(false);
     }
 
