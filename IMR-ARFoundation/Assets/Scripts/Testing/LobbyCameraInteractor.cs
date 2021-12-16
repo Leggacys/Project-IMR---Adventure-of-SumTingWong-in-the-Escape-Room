@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Room4Interactor : MonoBehaviour
+public class LobbyCameraInteractor : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,13 +14,13 @@ public class Room4Interactor : MonoBehaviour
     void Update()
     {
         if (Input.GetKey(KeyCode.H)){
+
             RaycastHit hit;
             if(Physics.Raycast(transform.position, transform.forward, out hit,100))
-            { 
-                LeverInteract lever1 = hit.transform.gameObject.GetComponent<LeverInteract>();
-                if(lever1)
-                {
-                    lever1.Interact();
+            {
+                SpawnTest spawner = hit.transform.gameObject.GetComponent<SpawnTest>();
+                if(spawner != null){
+                    spawner.Activate(this.gameObject);
                 }
             }
 

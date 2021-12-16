@@ -7,8 +7,10 @@ public class PuzzleCompleteChecker : MonoBehaviour
     public GameObject endObject;
 
     private void OnTriggerEnter(Collider other) {
-        if(other.gameObject.tag == "Ball")
+        if(other.gameObject.tag == "Ball"){
             endObject.SetActive(true);
+            GameObject.Find("PuzzleManager").GetComponent<Room3Manager>().EndGame(1);
+        }
     }
     
 }

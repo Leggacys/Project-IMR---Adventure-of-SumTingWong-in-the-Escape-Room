@@ -26,6 +26,11 @@ public class ARInteractionRoom2 : MonoBehaviour
                         myLightOnOff.Interact();
                     }
                 }
+
+                PuzzleEnding ending = hit.transform.gameObject.GetComponent<PuzzleEnding>();
+                if ( ending != null){
+                    ending.Interact();
+                }
             }
         }
     }

@@ -20,13 +20,32 @@ public class Room3Manager : MonoBehaviour
     public GameObject UIText;
     public GameObject endText;
     public List<GameObject> puzzlePieces;
-    public GameObject puzzleToSpawn,ball;
+    public GameObject puzzleToSpawn,ball,roomPrefab;
+    public GameObject endObject;
+    public GameObject lobby;
 
-
-    Text UIValue;
+    private Vector3 BallTransform = new Vector3(0.69f,0.69f,0.69f);
+    private float initialSecondCount = -1;
+    private Text UIValue;
 
     private void OnEnable() {
          UIValue = UIText.GetComponent<Text>();
+         if(initialSecondCount != -1)
+            secondCount = initialSecondCount;
+        else
+            initialSecondCount = secondCount;
+
+        if (BallTransform != new Vector3(0.69f,0.69f,0.69f))
+            ball.transform.position = BallTransform;
+        else
+            BallTransform = ball.transform.position;
+        
+        puzzleToSpawn.SetActive(false);
+        ball.SetActive(false);
+        endObject.SetActive(false);
+        endText.SetActive(false);
+        foreach(GameObject obj in puzzlePieces)
+            obj.SetActive(true);
         StartCoroutine("UITimer");
         StartCoroutine("PuzzleSpawn");
        
@@ -40,6 +59,8 @@ public class Room3Manager : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
         endText.SetActive(true);
+        yield return new WaitForSeconds(3);
+        EndGame(0);
 
 
     }
@@ -67,6 +88,21 @@ public class Room3Manager : MonoBehaviour
 
     public void GhostCollided(){
         secondCount -= penaltyValue;
+    }
+
+    
+
+    
+
+    public void EndGame(int final){
+        roomPrefab.SetActive(false);
+        GameObject camera = GameObject.Find("ARCamera");
+        camera.GetComponent<Room3NonARInteractor>().enabled = false;
+        lobby.SetActive(true);
+
+        lobby.transform.position = camera.transform.position + new Vector3(10,0,-6);
+
+
     }
 
 

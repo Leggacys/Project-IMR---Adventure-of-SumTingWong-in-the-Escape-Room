@@ -17,7 +17,7 @@ public class RayCastManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Da");
+            //Debug.Log("Da");
                 Ray ray = camera.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hitObject;
                 if (Physics.Raycast(ray, out hitObject))
@@ -26,6 +26,12 @@ public class RayCastManager : MonoBehaviour
                     if (gameObject.tag == "Button")
                     {
                         gameObject.GetComponent<Button>().onClick.Invoke();
+                    }
+
+                    EndPuzzle ender = hitObject.transform.gameObject.GetComponent<EndPuzzle>();
+                    if(ender != null)
+                    {
+                        ender.Interact();
                     }
                 }
         }
