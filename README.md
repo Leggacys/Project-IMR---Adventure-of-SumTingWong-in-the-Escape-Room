@@ -14,3 +14,5 @@ Hristea Ionut IRM2
 Iamandi Andrei-Petrisor IRM2 
 
 Lupu Cezar-Justinian IRM2
+
+Link for YouTube video: https://youtu.be/53P5gS6CEiI
