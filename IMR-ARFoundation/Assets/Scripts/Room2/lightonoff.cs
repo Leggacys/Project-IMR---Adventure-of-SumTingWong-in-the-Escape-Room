@@ -36,7 +36,7 @@ public class lightonoff : MonoBehaviour
             StartCoroutine("SwitchLight");
             gameObject.GetComponent<AudioSource>().Play();
             gameObject.GetComponent<Animator>().Play("switch");
-            Debug.Log("Andrei Boss");
+            //Debug.Log("Andrei Boss");
 
         }
     }
@@ -95,7 +95,7 @@ public class lightonoff : MonoBehaviour
         {
             if (lightList.Count == 0)
             {
-                Debug.Log("LA MULTI ANI ANDREI!");
+                //Debug.Log("LA MULTI ANI ANDREI!");
                 key.SetActive(!key.activeSelf);
                 break;
             }

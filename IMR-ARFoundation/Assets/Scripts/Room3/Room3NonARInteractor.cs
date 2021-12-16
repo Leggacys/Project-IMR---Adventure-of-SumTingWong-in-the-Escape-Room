@@ -54,13 +54,13 @@ public class Room3NonARInteractor : MonoBehaviour
             RaycastHit hit;
             if(Physics.Raycast(transform.position, transform.forward, out hit,100))
             {
-            GenericAxisRotate objRotator = hit.transform.gameObject.GetComponent<GenericAxisRotate>();
-            if (objRotator != null)
-                objRotator.Interact();
+                GenericAxisRotate objRotator = hit.transform.gameObject.GetComponent<GenericAxisRotate>();
+                if (objRotator != null)
+                    objRotator.Interact();
                 
-            PieceFoundDeactivator objPiece = hit.transform.GetComponent<PieceFoundDeactivator>();
-            if(objPiece != null)
-                objPiece.Interact();
+                PieceFoundDeactivator objPiece = hit.transform.GetComponent<PieceFoundDeactivator>();
+                if(objPiece != null)
+                    objPiece.Interact();
 
             }
 			
