@@ -324,6 +324,7 @@ GameObject:
   - component: {fileID: 1319152735}
   - component: {fileID: 1319152734}
   - component: {fileID: 1319152733}
+  - component: {fileID: 1319152736}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -442,6 +443,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1319152736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319152729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 138500b70e0c643448b6fa65b92680c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1337504324
 GameObject:
   m_ObjectHideFlags: 0
@@ -2111,6 +2124,8 @@ GameObject:
   - component: {fileID: 7106641921522210761}
   - component: {fileID: 7624373631902007103}
   - component: {fileID: 4776529287991948081}
+  - component: {fileID: 4776529287991948082}
+  - component: {fileID: 4776529287991948083}
   m_Layer: 0
   m_Name: Lever2
   m_TagString: Untagged
@@ -2137,6 +2152,31 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &4776529287991948082
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4776529287991948080}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.282348, y: 11.004454, z: 163.46925}
+  m_Center: {x: 0.7837855, y: 0.16604893, z: 39.867313}
+--- !u!114 &4776529287991948083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4776529287991948080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1fe424c5acf28a458a66415bc11f363, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4789144187432232238
 GameObject:
   m_ObjectHideFlags: 0
@@ -3387,6 +3427,8 @@ GameObject:
   - component: {fileID: 3909302448822807473}
   - component: {fileID: 2737937747688852401}
   - component: {fileID: 7743064427853983837}
+  - component: {fileID: 7743064427853983838}
+  - component: {fileID: 7743064427853983839}
   m_Layer: 0
   m_Name: Lever1
   m_TagString: Untagged
@@ -3413,6 +3455,31 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &7743064427853983838
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7743064427853983836}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.28234, y: 11.004446, z: 163.46925}
+  m_Center: {x: 0.7838141, y: 0.16604808, z: 39.867313}
+--- !u!114 &7743064427853983839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7743064427853983836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1fe424c5acf28a458a66415bc11f363, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7772056721266433966
 GameObject:
   m_ObjectHideFlags: 0
@@ -3477,6 +3544,8 @@ GameObject:
   - component: {fileID: 791719965596913192}
   - component: {fileID: 2997788908187964770}
   - component: {fileID: 8009207518477245782}
+  - component: {fileID: 8009207518477245783}
+  - component: {fileID: 8009207518477245784}
   m_Layer: 0
   m_Name: Lever3
   m_TagString: Untagged
@@ -3503,6 +3572,31 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &8009207518477245783
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8009207518477245781}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.282342, y: 11.004446, z: 163.46924}
+  m_Center: {x: 0.7837957, y: 0.16604789, z: 39.86734}
+--- !u!114 &8009207518477245784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8009207518477245781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1fe424c5acf28a458a66415bc11f363, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &8021425861745735421
 MeshRenderer:
   m_ObjectHideFlags: 0
