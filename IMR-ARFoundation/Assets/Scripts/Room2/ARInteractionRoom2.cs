@@ -33,11 +33,11 @@ public class ARInteractionRoom2 : MonoBehaviour
                     }
                 }
 
-                PuzzleEnding ending = hit.transform.gameObject.GetComponent<PuzzleEnding>();
-                if ( ending != null){
-                    ending.Interact();
-
-                }
+                EndPuzzle ender = hit.transform.gameObject.GetComponent<EndPuzzle>();
+                    if(ender != null)
+                    {
+                        ender.Interact();
+                    }
                 }
 
             }

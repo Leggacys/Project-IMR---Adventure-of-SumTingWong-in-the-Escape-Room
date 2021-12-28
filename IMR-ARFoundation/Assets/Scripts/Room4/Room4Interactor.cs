@@ -28,11 +28,11 @@ public class Room4Interactor : MonoBehaviour
                 {
                     lever1.Interact();
                 }
-                EndRoomPuzzle ender = hit.transform.gameObject.GetComponent<EndRoomPuzzle>();
-                if(ender != null)
-                {
-                    ender.Interact();
-                }
+                EndPuzzle ender = hit.transform.gameObject.GetComponent<EndPuzzle>();
+                    if(ender != null)
+                    {
+                        ender.Interact();
+                    }
 
                 }
 
