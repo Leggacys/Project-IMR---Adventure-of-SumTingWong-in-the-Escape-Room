@@ -34,7 +34,7 @@ public class SpawnTest : MonoBehaviour
 
 
             case 3:
-                camera.GetComponent<Room3NonARInteractor>().enabled =true;
+                camera.GetComponent<Room3ARInteractor>().enabled =true;
                 break;
             case 4:
                 camera.GetComponent<Room4Interactor>().enabled = true;

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class RayCastManager : MonoBehaviour
 {
     private Vector2 touchPosition;
-    public Camera camera;
+    public Camera arCamera;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,27 +13,39 @@ public class RayCastManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
+    void Update(){
+
+        if(Input.touchCount>0)
         {
-            //Debug.Log("Da");
-                Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-                RaycastHit hitObject;
-                if (Physics.Raycast(ray, out hitObject))
-                {
-                    GameObject gameObject = hitObject.transform.gameObject;
+            Touch touch = Input.GetTouch(0);
+
+            touchPosition = touch.position;
+
+            if (touch.phase == TouchPhase.Began)
+            {
+                Ray ray = arCamera.ScreenPointToRay(touch.position);
+                RaycastHit hit;
+                
+                if(Physics.Raycast(ray, out hit))
+                {   
+                    GameObject gameObject = hit.transform.gameObject;
                     if (gameObject.tag == "Button")
                     {
                         gameObject.GetComponent<Button>().onClick.Invoke();
                     }
 
-                    EndPuzzle ender = hitObject.transform.gameObject.GetComponent<EndPuzzle>();
+                    EndPuzzle ender = hit.transform.gameObject.GetComponent<EndPuzzle>();
                     if(ender != null)
                     {
                         ender.Interact();
                     }
+
                 }
+
+            }
+
+
         }
+
     }
 }

@@ -5,20 +5,26 @@ using UnityEngine;
 public class ARInteractionRoom2 : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
-    {
+    
+    private Vector2 touchPosition;
+    public Camera arCamera;
 
-    }
+    void Update(){
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKey(KeyCode.H))
+        if(Input.touchCount>0)
         {
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.forward, out hit, 100))
+            Touch touch = Input.GetTouch(0);
+
+            touchPosition = touch.position;
+
+            if (touch.phase == TouchPhase.Began)
             {
-                lightonoff myLightOnOff = hit.transform.gameObject.GetComponent<lightonoff>();
+                Ray ray = arCamera.ScreenPointToRay(touch.position);
+                RaycastHit hit;
+                
+                if(Physics.Raycast(ray, out hit))
+                {   
+                    lightonoff myLightOnOff = hit.transform.gameObject.GetComponent<lightonoff>();
                 if (myLightOnOff != null)
                 {
                     if (!myLightOnOff.isLightTriggered)
@@ -30,9 +36,15 @@ public class ARInteractionRoom2 : MonoBehaviour
                 PuzzleEnding ending = hit.transform.gameObject.GetComponent<PuzzleEnding>();
                 if ( ending != null){
                     ending.Interact();
+
                 }
+                }
+
             }
+
+
         }
+
     }
 }
 
