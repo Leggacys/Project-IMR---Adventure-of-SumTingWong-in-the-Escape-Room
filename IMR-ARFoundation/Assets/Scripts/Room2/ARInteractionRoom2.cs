@@ -25,6 +25,7 @@ public class ARInteractionRoom2 : MonoBehaviour
                 if(Physics.Raycast(ray, out hit))
                 {   
                     lightonoff myLightOnOff = hit.transform.gameObject.GetComponent<lightonoff>();
+                    
                 if (myLightOnOff != null)
                 {
                     if (!myLightOnOff.isLightTriggered)

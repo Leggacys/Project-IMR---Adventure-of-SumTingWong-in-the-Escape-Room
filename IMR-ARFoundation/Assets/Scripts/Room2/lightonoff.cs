@@ -16,6 +16,7 @@ public class lightonoff : MonoBehaviour
 
     public GameObject key;
 
+    [HideInInspector]
     public bool isLightTriggered;
 
     private void Start()
@@ -28,6 +29,7 @@ public class lightonoff : MonoBehaviour
     
 
 
+    [ContextMenu("Testing Button")]
     public void Interact()
     {
         if (PlayerInZone)
@@ -48,7 +50,7 @@ public class lightonoff : MonoBehaviour
             //txtToDisplay.SetActive(true);
             PlayerInZone = true;
         }
-     }
+    }
     
 
     private void OnTriggerExit(Collider other)     //if player exit zone
