@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
  using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class Room3Manager : MonoBehaviour
 {
     // enum State{
@@ -95,12 +95,7 @@ public class Room3Manager : MonoBehaviour
     
 
     public void EndGame(int final){
-        roomPrefab.SetActive(false);
-        GameObject camera = GameObject.Find("ARCamera");
-        camera.GetComponent<Room3NonARInteractor>().enabled = false;
-        lobby.SetActive(true);
-
-        lobby.transform.position = camera.transform.position + new Vector3(10,0,-6);
+        SceneManager.LoadScene("SampleScene");
 
 
     }
