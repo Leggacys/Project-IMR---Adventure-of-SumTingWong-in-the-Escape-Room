@@ -14,7 +14,7 @@ public class LightFlicker : MonoBehaviour
     void OnEnable()
     {
         currentLight = GetComponent<Light>();
-        currentLight.intensity = 2;
+        currentLight.intensity = 1;
         if(syncWith.Count>0){
         
         lightSync = new List<Light>();
