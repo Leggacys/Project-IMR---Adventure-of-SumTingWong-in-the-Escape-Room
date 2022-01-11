@@ -12,6 +12,7 @@ TagManager:
   - Room2
   - Room3
   - Room4
+  - Floor
   layers:
   - Default
   - TransparentFX

@@ -8,6 +8,8 @@ public class ARInteractionRoom2 : MonoBehaviour
     
     private Vector2 touchPosition;
     public Camera arCamera;
+    bool isTeleporting;
+    public GameObject room;
 
     void Update(){
 
@@ -39,6 +41,10 @@ public class ARInteractionRoom2 : MonoBehaviour
                     {
                         ender.Interact();
                     }
+
+                if(hit.transform.gameObject.tag == "Floor")
+                        if(!isTeleporting)
+                            TeleportToLocation(hit.point);
                 }
 
             }
@@ -46,6 +52,24 @@ public class ARInteractionRoom2 : MonoBehaviour
 
         }
 
+    }
+
+    
+
+    void TeleportToLocation(Vector3 location)
+    {
+        // float height = arCamera.transform.position.y;
+        // location.y = height;
+        // arCamera.transform.position= location;
+        
+        isTeleporting = true;
+
+        float height = room.transform.position.y;
+        float x_diff = arCamera.transform.position.x - location.x;
+        float z_diff = arCamera.transform.position.z - location.z;
+
+        room.transform.position += new Vector3(x_diff,0,z_diff); 
+        isTeleporting = false;
     }
 }
 

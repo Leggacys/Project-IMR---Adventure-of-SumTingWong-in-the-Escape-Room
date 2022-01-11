@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &375714091 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4314247801543394444, guid: e24ca0c9dbd514d4999184596acc2fb5, type: 3}
+  m_PrefabInstance: {fileID: 9143493182070746775}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1429652059
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,6 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arCamera: {fileID: 1787726792}
+  room: {fileID: 375714091}
 --- !u!114 &1523701070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -489,6 +495,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1429652062}
     m_Modifications:
+    - target: {fileID: 2008678896949194725, guid: e24ca0c9dbd514d4999184596acc2fb5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6ad4c72980b6b2148aff44d5014062ae, type: 2}
     - target: {fileID: 2316830621759941115, guid: e24ca0c9dbd514d4999184596acc2fb5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.416
@@ -568,6 +578,14 @@ PrefabInstance:
     - target: {fileID: 4314247801543394444, guid: e24ca0c9dbd514d4999184596acc2fb5, type: 3}
       propertyPath: m_Name
       value: Room4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519107763291038028, guid: e24ca0c9dbd514d4999184596acc2fb5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6ad4c72980b6b2148aff44d5014062ae, type: 2}
+    - target: {fileID: 9143493181142260947, guid: e24ca0c9dbd514d4999184596acc2fb5, type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 176549548215079410, guid: e24ca0c9dbd514d4999184596acc2fb5, type: 3}
