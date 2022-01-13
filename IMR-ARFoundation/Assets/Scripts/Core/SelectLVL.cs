@@ -7,24 +7,9 @@ public class SelectLVL : MonoBehaviour
 {
     private Vector2 touchPosition;
     public Camera camera;
-
-    // Update is called once per frame
+    
     void Update()
     {
-        // if (Input.GetMouseButtonDown(0))
-        // {
-        //     //Debug.Log("Da");
-        //     Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-        //     RaycastHit hitObject;
-        //     if (Physics.Raycast(ray, out hitObject))
-        //     {
-        //         GameObject gameObject = hitObject.transform.gameObject;
-        //         if (gameObject.tag == "Room")
-        //         {
-        //             SceneManager.LoadScene("Room 1");
-        //         }
-        //     }
-        // }
 
         if(Input.touchCount>0)
         {
@@ -38,23 +23,27 @@ public class SelectLVL : MonoBehaviour
                 RaycastHit hit;
                 
                 if(Physics.Raycast(ray, out hit))
-                {   
+                {
                     GameObject gameObject = hit.transform.gameObject;
                     if (gameObject.tag == "Room1")
                     {
                         SceneManager.LoadScene("Room 1");
+                        SetBoolFirstTime();
                     }
                     if (gameObject.tag == "Room2")
                     {
                         SceneManager.LoadScene("Room 2");
+                        SetBoolFirstTime();
                     }
                     if (gameObject.tag == "Room3")
                     {
                         SceneManager.LoadScene("Room 3");
+                        SetBoolFirstTime();
                     }
                     if (gameObject.tag == "Room4")
                     {
                         SceneManager.LoadScene("Room 4");
+                        SetBoolFirstTime();
                     }
 
                 }
@@ -64,4 +53,12 @@ public class SelectLVL : MonoBehaviour
 
         }
     }
+
+
+    private void SetBoolFirstTime()
+    {
+        Constants.instance.firstTime = false;
+    }
+    
+
 }

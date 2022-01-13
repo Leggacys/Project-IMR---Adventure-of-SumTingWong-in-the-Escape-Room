@@ -90,14 +90,10 @@ public class Room3Manager : MonoBehaviour
         secondCount -= penaltyValue;
     }
 
-    
-
-    
-
     public void EndGame(int final){
+        Scene scene = SceneManager.GetActiveScene();
+        Constants.instance.roomsKey[scene.buildIndex-1] = true;
         SceneManager.LoadScene("SampleScene");
-
-
     }
 
 

@@ -13,6 +13,7 @@ TagManager:
   - Room3
   - Room4
   - Floor
+  - WinText
   layers:
   - Default
   - TransparentFX

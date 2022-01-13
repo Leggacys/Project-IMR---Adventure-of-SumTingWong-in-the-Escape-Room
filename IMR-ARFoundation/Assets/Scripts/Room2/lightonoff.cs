@@ -75,7 +75,7 @@ public class lightonoff : MonoBehaviour
                 i--;
             }
         }
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(15);
         lightorobj.SetActive(!lightorobj.activeSelf);
         for (int i = 0; i < lightList.Count ; i++)
         {
