@@ -92,7 +92,11 @@ public class Room3Manager : MonoBehaviour
 
     public void EndGame(int final){
         Scene scene = SceneManager.GetActiveScene();
-        Constants.instance.roomsKey[scene.buildIndex-1] = true;
+        if(final == 1){
+            Constants.instance.roomsKey[scene.buildIndex-1] = true;
+        }else{
+            Constants.instance.roomsKey[scene.buildIndex-1] = false;
+        }
         SceneManager.LoadScene("SampleScene");
     }
 
