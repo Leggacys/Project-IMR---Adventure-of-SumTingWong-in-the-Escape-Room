@@ -10,6 +10,7 @@ using UnityEngine.XR.ARSubsystems;
 public class TapToPlace : MonoBehaviour
 {
     public GameObject portal;
+    public Camera arCamera;
 
     private ARRaycastManager _arRaycastManager;
     private Vector2 touchPosition;
@@ -18,12 +19,13 @@ public class TapToPlace : MonoBehaviour
     private GameObject _spawnedObject;
 
     private static List<ARRaycastHit> hits = new List<ARRaycastHit>();
-
+    private bool existARPortal = false;
 
     private void Start()
     {
         _arRaycastManager = GetComponent<ARRaycastManager>();
         _arAnchorManager = GetComponent<ARAnchorManager>();
+
     }
 
     bool TryGetTouchPosition(out Vector2 touchPosition)
@@ -42,6 +44,24 @@ public class TapToPlace : MonoBehaviour
     {
         if (!TryGetTouchPosition(out Vector2 touchPosition))
             return;
+
+        if (Constants.instance.firstTime)
+        {
+            InstancePortal();
+        }
+        else
+        {
+            if (!existARPortal)
+            {
+                Instantiate(portal, arCamera.transform.position+ new Vector3(0,0,4.87f), Quaternion.identity);
+                existARPortal = true;
+            }
+        }
+
+    }
+
+    private void InstancePortal()
+    {
         if (_arRaycastManager.Raycast(touchPosition, hits, TrackableType.PlaneWithinPolygon))
         {
             var hitPose = hits[0].pose;
@@ -64,4 +84,5 @@ public class TapToPlace : MonoBehaviour
             
         }
     }
+    
 }

@@ -12,6 +12,8 @@ TagManager:
   - Room2
   - Room3
   - Room4
+  - Floor
+  - WinText
   layers:
   - Default
   - TransparentFX

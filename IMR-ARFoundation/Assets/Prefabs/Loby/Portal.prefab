@@ -531,7 +531,7 @@ GameObject:
   - component: {fileID: 642670038}
   m_Layer: 0
   m_Name: Door2
-  m_TagString: Room
+  m_TagString: Room2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -701,7 +701,7 @@ GameObject:
   - component: {fileID: 8857742004958337782}
   m_Layer: 0
   m_Name: Doors3
-  m_TagString: Room
+  m_TagString: Room3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1064,6 +1064,11 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 6c4a37fb8f5c8374dbaa04ab0a7d9607, type: 2}
   - {fileID: 2100000, guid: 641dadc2049b68d41904fc1dd1cb0235, type: 2}
   - {fileID: 2100000, guid: 4348a5f90359bac4ba2fef98b843b01d, type: 2}
+  doors:
+  - {fileID: 5468577682961555246}
+  - {fileID: 1177316137715283983}
+  - {fileID: 1177316138151379438}
+  - {fileID: 4639146004759913722}
 --- !u!1 &1177316139078518386
 GameObject:
   m_ObjectHideFlags: 0
@@ -4230,7 +4235,7 @@ GameObject:
   - component: {fileID: 4670490574394374534}
   m_Layer: 0
   m_Name: Door4
-  m_TagString: Room
+  m_TagString: Room4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -5032,7 +5037,7 @@ GameObject:
   - component: {fileID: 1940696967}
   m_Layer: 0
   m_Name: Door1
-  m_TagString: Room
+  m_TagString: Room1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
